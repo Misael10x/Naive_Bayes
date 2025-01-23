@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naive Bayes Visualization</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: black;
+            color: #39ff14;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #ff073a;
+            text-shadow: 0 0 8px #ff073a, 0 0 20px #ff073a;
+        }
+
+        img {
+            margin-top: 20px;
+            border: 5px solid #00ffff;
+            box-shadow: 0 0 15px #00ffff, 0 0 30px #00ffff;
+            border-radius: 10px;
+        }
+
+        footer {
+            margin-top: 20px;
+            color: #00ff7f;
+            font-size: 1rem;
+        }
+
+        button {
+            font-size: 1.5rem;
+            padding: 10px 20px;
+            margin-top: 30px;
+            background-color: #ff073a;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #ff5c8d;
+        }
+    </style>
+</head>
+<body>
+    <h1>Naive Bayes Visualization</h1>
+    <form method="POST">
+        <button type="submit">Entrenar Modelo</button>
+    </form>
+    
+    {% if accuracy is not none %}
+        <p>Precisión del modelo: {{ accuracy }}</p>
+        <p>La gráfica de clasificación generada por Naive Bayes se muestra a continuación:</p>
+        <img src="data:image/png;base64,{{ plot_url }}" alt="Naive Bayes Plot">
+    {% endif %}
+    
+    <footer>
+        &copy; 2025 - Misael Barbosa Arce
+    </footer>
+</body>
+</html>
